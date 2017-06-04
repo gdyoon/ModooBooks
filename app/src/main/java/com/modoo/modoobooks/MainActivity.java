@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(36.6283032, 127.4561366), 15.0f));
     }
 
-    // 공유된 가계도 목록 출력 함수
+    // 
     private void createBorrowBook(String paramTitleText, String paramAuthorText) throws Exception{
         LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 250);
         param.gravity = Gravity.CENTER;
