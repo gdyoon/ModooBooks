@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_read_book"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/img_book"
+        android:layout_marginRight="15dp"/>
+
+    <TextView
+        android:id="@+id/tv_read_book_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/iv_read_book"
+        android:text="제이쿼리 입문 (2017)"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/tv_read_book_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/iv_read_book"
+        android:layout_below="@id/tv_read_book_title"
+        android:text="홍길동 저"
+        android:textColor="#000"
+        android:textSize="15dp"
+        android:layout_marginTop="5dp"/>
+
+    <Button
+        android:id="@+id/btn_read_book_return"
+        android:text="반납"
+        android:textSize="15dp"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:textColor="@color/button"
+        android:background="@drawable/button"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp" />
+
+</RelativeLayout>

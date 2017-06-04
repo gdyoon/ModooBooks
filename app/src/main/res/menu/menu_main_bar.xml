@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_main_search"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/img_search"
+        android:title="main_search" />
+
+
+    <item
+        android:id="@+id/menu_main_alarm"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/img_alarm"
+        android:title="main_alarm" />
+
+
+</menu>
