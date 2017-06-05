@@ -106,6 +106,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(36.6283032, 127.4561366), 15.0f));
     }
 
+
     @OnClick(R.id.iv_main_user)
     public void onMyPictureClicked(){
         Intent intent = new Intent(getApplicationContext(), MyInfoActivity.class);
