@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".MainActivity">
+        <activity android:name=".CoverActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +21,10 @@
             android:value="AIzaSyAGbZXqdibSeJhitChxcTHRFv54s9EVpM8" />
 
         <activity android:name=".SearchActivity" />
-        <activity android:name=".MyInfoActivity"></activity>
+        <activity android:name=".MyInfoActivity" />
+        <activity android:name=".MyAlarmActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".LoginActivity"></activity>
     </application>
 
 </manifest>

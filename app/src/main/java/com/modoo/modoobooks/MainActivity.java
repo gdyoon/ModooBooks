@@ -78,7 +78,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
                 // 알람 버튼 클릭 시
                 else if (item.getItemId() == R.id.menu_main_alarm){
-
+                    Intent intent = new Intent(getApplicationContext(), MyAlarmActivity.class);
+                    startActivity(intent);
                 }
 
                 return false;
