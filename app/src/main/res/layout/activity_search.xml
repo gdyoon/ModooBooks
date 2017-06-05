@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_search"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context="com.modoo.modoobooks.SearchActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <Spinner
+            android:id="@+id/sp_search_category"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:textSize="15dp"
+            android:textColor="#000"
+            android:gravity="right">
+        </Spinner>
+
+        <EditText
+            android:id="@+id/et_search_category"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/sp_search_category"/>
+
+        <Button
+            android:id="@+id/btn_search_category"
+            android:text="검색"
+            android:textSize="15dp"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:textColor="@color/button"
+            android:background="@drawable/button"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#d6d6d6"
+        android:layout_marginBottom="20dp"/>
+
+
+    <LinearLayout
+        android:id="@+id/ll_searched_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    </LinearLayout>
+
+</LinearLayout>

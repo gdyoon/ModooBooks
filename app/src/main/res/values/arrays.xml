@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cb_category">
+        <item>자판기</item>
+        <item>도서</item>
+    </string-array>
+</resources>

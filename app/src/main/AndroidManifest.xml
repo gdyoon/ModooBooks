@@ -19,6 +19,8 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAGbZXqdibSeJhitChxcTHRFv54s9EVpM8" />
+
+        <activity android:name=".SearchActivity"></activity>
     </application>
 
 </manifest>

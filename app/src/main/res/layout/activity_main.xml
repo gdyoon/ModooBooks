@@ -144,16 +144,38 @@
                 android:textColor="#000"
                 android:textStyle="bold"
                 android:textSize="18dp"
-                android:layout_marginTop="70dp"/>
+                android:layout_marginTop="70dp"
+                android:layout_marginBottom="20dp"/>
 
             <!-- 대출한 책에 대해 동적으로 생겨나는 뷰 -->
             <LinearLayout
                 android:id="@+id/ll_main_read_books"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="20dp">
+                android:orientation="vertical">
             </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="잘하고 있어요!"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- 사용자의 대출/반납을 나타내는 통계 치-->
+            <lecho.lib.hellocharts.view.ColumnChartView
+                android:id="@+id/chart"
+                android:layout_width="match_parent"
+                android:layout_height="220dp">
+            </lecho.lib.hellocharts.view.ColumnChartView>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
 
 
         </LinearLayout>
