@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_wait_user"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/img_wait_user"
+        android:layout_marginRight="15dp"/>
+
+    <TextView
+        android:id="@+id/tv_wait_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/iv_wait_user"
+        android:text="홍길동"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/tv_wait_user_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/iv_wait_user"
+        android:layout_below="@id/tv_wait_user_name"
+        android:text="bon92"
+        android:textColor="#000"
+        android:textSize="15dp"
+        android:layout_marginTop="5dp"/>
+
+
+    <Button
+        android:id="@+id/btn_wait_user_confirm"
+        android:text="승인"
+        android:textSize="15dp"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:textColor="@color/button"
+        android:background="@drawable/button"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="250dp"/>
+
+    <Button
+        android:id="@+id/btn_wait_user_refuse"
+        android:text="거절"
+        android:textSize="15dp"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:textColor="@color/button"
+        android:background="@drawable/button"
+        android:layout_toRightOf="@id/btn_wait_user_confirm"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"/>
+
+
+
+</RelativeLayout>

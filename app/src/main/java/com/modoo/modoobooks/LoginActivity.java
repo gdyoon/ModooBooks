@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.modoo.modoobooks.admin.AdminActivity;
+
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -26,7 +28,8 @@ public class LoginActivity extends AppCompatActivity {
         switch (paramView.getId()){
             case R.id.btn_login:
                 if(isAdmin) {
-
+                    Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
+                    startActivity(intent);
                 }
                 else {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -35,6 +38,8 @@ public class LoginActivity extends AppCompatActivity {
 
                 break;
             case R.id.btn_join:
+                Intent intent = new Intent(getApplicationContext(), JoinActivity.class);
+                startActivity(intent);
                 break;
         }
     }

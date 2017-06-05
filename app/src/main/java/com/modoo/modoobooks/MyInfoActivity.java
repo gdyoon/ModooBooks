@@ -36,11 +36,11 @@ public class MyInfoActivity extends AppCompatActivity {
         TextView retTextView = null;
 
         switch (options){
-            case 0: retTextView = tv_my_info_name;       break;
+            case 0: retTextView = tv_my_info_name;      break;
             case 1: retTextView = tv_my_info_phone;     break;
             case 2: retTextView = tv_my_info_addr;      break;
-            case 3: retTextView = tv_my_info_gender;   break;
-            case 4: retTextView = tv_my_info_age; break;
+            case 3: retTextView = tv_my_info_gender;    break;
+            case 4: retTextView = tv_my_info_age;       break;
         }
 
         return retTextView;

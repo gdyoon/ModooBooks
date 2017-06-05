@@ -1,0 +1,78 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.modoo.modoobooks.admin.BookManaFragment"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="#dadada"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:text="도서 대출 요청"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:textSize="17dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+
+                    android:layout_marginLeft="10dp"/>
+            </RelativeLayout>
+
+
+            <!-- 대출한 책에 대해 동적으로 생겨나는 뷰 -->
+            <LinearLayout
+                android:id="@+id/ll_borrow_request"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="#dadada"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:text="반납 대기"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:textSize="17dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+
+                    android:layout_marginLeft="10dp"/>
+            </RelativeLayout>
+
+
+            <!-- 대출한 책에 대해 동적으로 생겨나는 뷰 -->
+            <LinearLayout
+                android:id="@+id/ll_wait_books"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

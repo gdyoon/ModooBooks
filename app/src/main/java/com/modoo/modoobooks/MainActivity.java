@@ -185,7 +185,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     // 챠트 클릭시 나타나는 이벤트를 정의
     private class ValueTouchListener implements ColumnChartOnValueSelectListener {
-
         @Override
         public void onValueSelected(int columnIndex, int subcolumnIndex, SubcolumnValue value) {
             Toast.makeText(getApplicationContext(), "Selected: " + value, Toast.LENGTH_SHORT).show();

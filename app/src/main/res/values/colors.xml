@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="tool_bar_color">#013064</color>
+    <color name="tab_background_selected">#ffffff</color>
+    <color name="tab_background_unselected">#ffffff</color>
+    <color name="tab_indicator_color">#013064</color>
 </resources>
