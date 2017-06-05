@@ -25,12 +25,10 @@ public class LoginActivity extends AppCompatActivity {
     public void onButtonClicked(View paramView){
         switch (paramView.getId()){
             case R.id.btn_login:
-                if(isAdmin)
-                {
+                if(isAdmin) {
 
                 }
-                else
-                {
+                else {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                 }
