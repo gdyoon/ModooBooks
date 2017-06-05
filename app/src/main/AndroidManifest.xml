@@ -20,7 +20,8 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAGbZXqdibSeJhitChxcTHRFv54s9EVpM8" />
 
-        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".MyInfoActivity"></activity>
     </application>
 
 </manifest>

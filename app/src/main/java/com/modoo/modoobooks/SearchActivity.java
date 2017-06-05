@@ -65,9 +65,7 @@ public class SearchActivity extends AppCompatActivity {
                 searchedItem(R.drawable.img_book, "SQL 전문가가 되는 지름길 (2016)", "김동민 저");
                 break;
         }
-
     }
-
 
     // 대출 책에 대한 동적 뷰 생성
     private void searchedItem(int resourceId, String paramTitleText, String paramAuthorText){

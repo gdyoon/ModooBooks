@@ -24,6 +24,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import lecho.lib.hellocharts.formatter.SimpleAxisValueFormatter;
 import lecho.lib.hellocharts.formatter.SimpleColumnChartValueFormatter;
 import lecho.lib.hellocharts.listener.ColumnChartOnValueSelectListener;
@@ -102,6 +103,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap googleMap) {
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(36.6283032, 127.4561366), 15.0f));
+    }
+
+    @OnClick(R.id.iv_main_user)
+    public void onMyPictureClicked(){
+        Intent intent = new Intent(getApplicationContext(), MyInfoActivity.class);
+        startActivity(intent);
     }
 
     // 대출 책에 대한 동적 뷰 생성
