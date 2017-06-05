@@ -12,6 +12,7 @@ public class CoverActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cover);
 
+        // 1.5 초 후에 로그인 화면으로
         new Handler().postDelayed(new Runnable()
         {
             @Override

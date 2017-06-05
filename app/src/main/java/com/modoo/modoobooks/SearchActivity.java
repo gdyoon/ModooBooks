@@ -34,6 +34,7 @@ public class SearchActivity extends AppCompatActivity {
         initializeView();
     }
 
+    // 뷰 초기화
     private void initializeView() {
         List<String> list = new ArrayList<>();
         list.add("자판기");

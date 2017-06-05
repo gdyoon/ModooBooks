@@ -13,6 +13,7 @@ import butterknife.OnClick;
 
 public class LoginActivity extends AppCompatActivity {
 
+    // 관리자인지 사용자인지 구분하기 위한 플래그 변수
     boolean isAdmin = false;
 
     @Override
@@ -23,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
+    // 로그인, 회원가입 버튼 클릭 시
     @OnClick({R.id.btn_login, R.id.btn_join})
     public void onButtonClicked(View paramView){
         switch (paramView.getId()){
@@ -44,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    // 관리자 또는 사용자 라디오 버튼 클릭 시
     @OnClick({R.id.rb_join_admin, R.id.rb_join_user})
     public void onRadioButtonClicked(View paramView){
         switch (paramView.getId()){
@@ -55,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                 break;
         }
 
+        // 토스트로 값 확인 하기
         Toast.makeText(getApplicationContext(), ""+isAdmin, Toast.LENGTH_SHORT).show();
     }
 }

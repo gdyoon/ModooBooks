@@ -27,17 +27,21 @@ public class AdminActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin);
         ButterKnife.bind(this);
 
+        // ViewPager로 연동하기 위해 프래그먼트 배열 생성
         Fragment[] arrFragments = new Fragment[3];
         arrFragments[0] = new UserManaFragment();
         arrFragments[1] = new BookManaFragment();
         arrFragments[2] = new StatManaFragment();
 
+        // 어댑터에 프래그먼트 배열을 담아서
         MainPagerAdapter adapter = new MainPagerAdapter(getSupportFragmentManager(), arrFragments);
+        // ViewPager에 넣으면
         viewPager.setAdapter(adapter);
-        //viewPager.setCurrentItem(page, true);
+        // 탭에 3개의 메뉴가 생김
         tabLayout.setupWithViewPager(viewPager);
     }
 
+    // ViewPager의 어댑터 클래스 정의
     class MainPagerAdapter extends FragmentPagerAdapter {
 
         Fragment[] arrFragments;
@@ -49,6 +53,7 @@ public class AdminActivity extends AppCompatActivity {
 
 
 
+        // 탭에 표시할 타이틀
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
@@ -65,6 +70,7 @@ public class AdminActivity extends AppCompatActivity {
         }
 
 
+        // 탭 선택시 반환되는 프래그먼트
         @Override
         public Fragment getItem(int position) {
 
