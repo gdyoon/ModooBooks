@@ -28,16 +28,17 @@ public class AdminActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         // ViewPager로 연동하기 위해 프래그먼트 배열 생성
-        Fragment[] arrFragments = new Fragment[3];
+        Fragment[] arrFragments = new Fragment[4];
         arrFragments[0] = new UserManaFragment();
         arrFragments[1] = new BookManaFragment();
         arrFragments[2] = new StatManaFragment();
+        arrFragments[3] = new QueryTestFragment();
 
         // 어댑터에 프래그먼트 배열을 담아서
         MainPagerAdapter adapter = new MainPagerAdapter(getSupportFragmentManager(), arrFragments);
         // ViewPager에 넣으면
         viewPager.setAdapter(adapter);
-        // 탭에 3개의 메뉴가 생김
+        // 탭에 4개의 메뉴가 생김
         tabLayout.setupWithViewPager(viewPager);
     }
 
@@ -64,6 +65,9 @@ public class AdminActivity extends AppCompatActivity {
                     return "도서 관리";
                 case 2:
                     return "통계 관리";
+
+                case 3:
+                    return "쿼리 테스트";
                 default:
                     return "";
             }

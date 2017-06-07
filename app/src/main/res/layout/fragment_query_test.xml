@@ -1,0 +1,214 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.modoo.modoobooks.admin.QueryTestFragment"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_query_modoo_login"
+            android:text="회원 로그인"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textColor="@color/button"
+            android:background="@drawable/button" />
+        <Button
+            android:id="@+id/btn_query_modoo_user_modify_info"
+            android:text="개인 정보 수정"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textColor="@color/button"
+            android:background="@drawable/button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_query_modoo_user_book_author"
+            android:text="작가명 검색"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textColor="@color/button"
+            android:background="@drawable/button" />
+        <Button
+            android:id="@+id/btn_query_modoo_user_book_name"
+            android:text="책 이름 검색"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textColor="@color/button"
+            android:background="@drawable/button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_query_modoo_user_book_isbn"
+            android:text="ISBN 검색"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textColor="@color/button"
+            android:background="@drawable/button" />
+        <Button
+            android:id="@+id/btn_query_modoo_user_vm_around"
+            android:text="자판기 주변 검색"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textColor="@color/button"
+            android:background="@drawable/button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_query_modoo_user_vm_local"
+            android:text="자판기 지역 검색"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textColor="@color/button"
+            android:background="@drawable/button" />
+        <Button
+            android:id="@+id/btn_query_modoo_user_vm_id"
+            android:text="자판기 번호 검색"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textColor="@color/button"
+            android:background="@drawable/button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_query_modoo_user_state_borrow"
+            android:text="사용자 대여 현황 조회"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textColor="@color/button"
+            android:background="@drawable/button" />
+        <Button
+            android:id="@+id/btn_query_modoo_user_state_return"
+            android:text="사용자 반납 현황 조회"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textColor="@color/button"
+            android:background="@drawable/button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_query_modoo_admin_user_assign"
+            android:text="가입 승인"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textColor="@color/button"
+            android:background="@drawable/button" />
+        <Button
+            android:id="@+id/btn_query_modoo_admin_user_refuse"
+            android:text="회원 차단"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textColor="@color/button"
+            android:background="@drawable/button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_query_modoo_admin_return_confirm"
+            android:text="반납 승인"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textColor="@color/button"
+            android:background="@drawable/button" />
+        <Button
+            android:id="@+id/btn_query_modoo_admin_state_borrow"
+            android:text="자판기별 대출 현황 조회"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textColor="@color/button"
+            android:background="@drawable/button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_query_modoo_admin_state_return"
+            android:text="자판기별 반납 현황 조회"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textColor="@color/button"
+            android:background="@drawable/button" />
+        <Button
+            android:id="@+id/btn_query_modoo_admin_stat_month_borrow"
+            android:text="월별 사용자 도서 대출 통계"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textColor="@color/button"
+            android:background="@drawable/button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_query_modoo_admin_stat_month_return"
+            android:text="월별 사용자 도서 반납 통계"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textColor="@color/button"
+            android:background="@drawable/button" />
+        <Button
+            android:text="-"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textColor="@color/button"
+            android:background="@drawable/button" />
+    </LinearLayout>
+
+</LinearLayout>

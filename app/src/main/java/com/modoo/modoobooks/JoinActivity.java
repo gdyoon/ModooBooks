@@ -1,10 +1,14 @@
 package com.modoo.modoobooks;
 
+import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.modoo.modoobooks.db.DB;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,7 +22,9 @@ public class JoinActivity extends AppCompatActivity {
     @BindView(R.id.et_join_name)    EditText et_join_name;
     @BindView(R.id.et_join_phone)   EditText et_join_phone;
     @BindView(R.id.et_join_email)   EditText et_join_email;
+    @BindView(R.id.et_join_addr)   EditText et_join_addr;
     boolean isMan = true;
+    public static boolean joinSucceed = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +47,33 @@ public class JoinActivity extends AppCompatActivity {
                 String name = et_join_name.getText().toString();
                 String phone = et_join_phone.getText().toString();
                 String email = et_join_email.getText().toString();
+                String addr = et_join_addr.getText().toString();
+                String gender = "남";
+                if(isMan){
+                    gender = "남";
+                }
+                else{
+                    gender = "여";
+                }
 
-                // 입력정보 토스트로 띄워보기
-                Toast.makeText(getApplicationContext(), id +"/"+ pw +"/" + name +"/"
-                        + name +"/" + phone +"/" + email + "is_man?" + isMan , Toast.LENGTH_SHORT).show();
+                DB.modoo_join modoo_join = new DB.modoo_join();
+                modoo_join.execute(id,pw,name,addr,phone, email, gender);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(joinSucceed)
+                        {
+                            Toast.makeText(getApplicationContext(),"회원가입 성공", Toast.LENGTH_SHORT).show();
+                            joinSucceed = false;
+                            finish();
+                        }
+                        else{
+                            Toast.makeText(getApplicationContext(),"회원가입 실패", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }, 1000);
+
                 break;
 
             // 취소 버튼
