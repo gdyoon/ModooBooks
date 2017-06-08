@@ -1,7 +1,10 @@
 package com.modoo.modoobooks;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -11,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -18,6 +22,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
+import com.modoo.modoobooks.db.DB;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +45,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     String LOG_TAG = MainActivity.class.getSimpleName();
 
+    @BindView(R.id.tv_main_user_name) TextView tv_main_user_name;
+    @BindView(R.id.tv_main_user_borrow) TextView tv_main_user_borrow;
+    @BindView(R.id.tv_main_user_road) TextView tv_main_user_road;
+
+
     // 최상단 툴바
     @BindView(R.id.tb_main_bar)
     Toolbar tb_main_bar;
@@ -54,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     ColumnChartView chartView;
     ColumnChartData chartData;
 
+    public static String borrowList = "";
+
     // 사용 X
     private GoogleMap m_googleMap;
 
@@ -63,7 +75,57 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initializeView(savedInstanceState);
+
+        String id = loadId();
+
+        DB.modoo_user_modify_get modoo_user_modify_get = new DB.modoo_user_modify_get();
+        modoo_user_modify_get.execute(id);
+
+        DB.modoo_user_state_borrow modoo_user_state_borrow = new DB.modoo_user_state_borrow();
+        modoo_user_state_borrow.execute(id);
+
+        DB.modoo_user_state_return modoo_user_state_return = new DB.modoo_user_state_return();
+        modoo_user_state_return.execute(id);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                tv_main_user_road.setText("읽은 책 : " + MyInfoActivity.returnCount);
+                tv_main_user_borrow.setText("대출 중 : " + MyInfoActivity.borrowCount);
+
+                String[] token = MyInfoActivity.myInfo.split("#");
+                tv_main_user_name.setText(token[0]);
+
+                Log.d("DB", "borrowList : " + borrowList);
+
+                if(!borrowList.equals("")) {
+                    String[] rows = borrowList.split("&");
+                    for (String row : rows) {
+                        String[] col = row.split("#");
+                        String ret_book_name = col[0];
+                        String ret_book_borrow_date = col[1];
+
+                        createBorrowBook(ret_book_name, ret_book_borrow_date);
+                    }
+                }
+            }
+        }, 500);
     }
+
+
+    private String loadId(){
+        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        String ret_id = mPref.getString("user_id", "empty");
+
+        return ret_id;
+    }
+
+    @OnClick(R.id.btn_main_vm_search)
+    public void onVmSearcthButtonClicked(){
+        Intent intent = new Intent(MainActivity.this, VmLocationActivity.class);
+        startActivity(intent);
+    }
+
 
     // 뷰 초기화
     private void initializeView(Bundle savedInstanceState){
@@ -127,7 +189,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     // 대출 책에 대한 동적 뷰 생성
-    private void createBorrowBook(String paramTitleText, String paramAuthorText) throws Exception{
+    private void createBorrowBook(String paramTitleText, String paramAuthorText){
         // 레이아웃 가로, 세로 값 정의 파라미터는 픽셀 값으로 들어감
         LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 250);
         // 가운데 정렬
@@ -141,6 +203,16 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         borrowBookItem.setIconResource(R.drawable.img_book);
         borrowBookItem.setTitleText(paramTitleText);
         borrowBookItem.setAuthorText(paramAuthorText);
+
+        borrowBookItem.getBtn_read_book_return().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                borrowBookItem.getBtn_read_book_return().setText("요청완료");
+                borrowBookItem.getBtn_read_book_return().setClickable(false);
+                borrowBookItem.getBtn_read_book_return().setEnabled(false);
+                Toast.makeText(getApplicationContext(), "반납 요청 완료", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         // 동적으로 생성된 뷰 클릭 시 연결할 이벤트 리스너
         borrowBookItem.setOnClickListener(new View.OnClickListener() {
@@ -179,8 +251,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             // 한 컬럼당 막대 개수만큼 순회
             for (int j = 0; j < numSubcolumns; ++j) {
                 // 데이터를 랜덤으로 생성, 여기다가 쿼리로 불러와서 책 읽은 권수 넣으면 될듯
-                values.add(new SubcolumnValue((float) Math.random() * 50f + 5, ChartUtils.pickColor()));
+                values.add(new SubcolumnValue((float) Math.random() * 10f, ChartUtils.pickColor()));
             }
+
+
 
             // 컬럼 객체를 하나 생성해서 생성한 데이터를 컬럼 리스트 객체에 하나씩 넣기
             Column column = new Column(values);
@@ -231,7 +305,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         // 챠트 바 클릭시
         @Override
         public void onValueSelected(int columnIndex, int subcolumnIndex, SubcolumnValue value) {
-            Toast.makeText(getApplicationContext(), "Selected: " + value, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), (columnIndex+1)  + "월에는 " + (int)value.getValue() + "권 만큼 읽었어요!",  Toast.LENGTH_SHORT).show();
         }
 
         @Override

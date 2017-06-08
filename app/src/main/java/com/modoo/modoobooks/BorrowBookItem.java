@@ -38,6 +38,10 @@ public class BorrowBookItem extends LinearLayout {
         btn_read_book_return = (Button)findViewById(R.id.btn_read_book_return);
     }
 
+    public Button getBtn_read_book_return() {
+        return btn_read_book_return;
+    }
+
 
     // 이미지 리소스 변경
     public void setIconResource(int resId){

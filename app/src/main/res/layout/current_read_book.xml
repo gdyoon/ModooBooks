@@ -19,7 +19,7 @@
         android:text="제이쿼리 입문 (2017)"
         android:textColor="#000"
         android:textStyle="bold"
-        android:textSize="20dp"/>
+        android:textSize="18dp"/>
 
     <TextView
         android:id="@+id/tv_read_book_author"

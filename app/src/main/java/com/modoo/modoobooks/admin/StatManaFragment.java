@@ -72,7 +72,7 @@ public class StatManaFragment extends Fragment {
             values = new ArrayList<SubcolumnValue>();
 
             for (int j = 0; j < numSubcolumns; ++j) {
-                values.add(new SubcolumnValue((float) Math.random() * 50f + 5, ChartUtils.pickColor()));
+                values.add(new SubcolumnValue((float) Math.random() * 50f, ChartUtils.pickColor()));
             }
 
             Column column = new Column(values);
@@ -113,7 +113,7 @@ public class StatManaFragment extends Fragment {
     private class ValueTouchListener implements ColumnChartOnValueSelectListener {
         @Override
         public void onValueSelected(int columnIndex, int subcolumnIndex, SubcolumnValue value) {
-            Toast.makeText(getContext(), "Selected: " + value, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), columnIndex + " 월 통계 : " + (int)value.getValue(), Toast.LENGTH_SHORT).show();
         }
 
         @Override

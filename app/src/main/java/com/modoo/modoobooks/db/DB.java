@@ -396,13 +396,19 @@ public class DB {
         protected void onPostExecute(String paramValue) {
             super.onPostExecute(paramValue);
 
-            String[] rows = paramValue.split("$");
+            if(paramValue.equals("0")){
+                return;
+            }
+
+            SearchActivity.searchedList = paramValue;
+
+            /*String[] rows = paramValue.split("$");
 
             for(String row : rows){
                 String[] col = row.split("#");
                 String ret_book_name = col[0];
                 String ret_book_author = col[1];
-            }
+            }*/
 
         }
     }
@@ -603,8 +609,10 @@ public class DB {
                 return;
             }
 
+            MainActivity.borrowList = paramValue;
 
-            String[] rows = paramValue.split("$");
+
+            String[] rows = paramValue.split("&");
 
 
 
@@ -612,12 +620,11 @@ public class DB {
                     String[] col = row.split("#");
                     String ret_book_name = col[0];
 
+
                     MyInfoActivity.borrowCount++;
                 }
             }
         }
-
-
 
 
     // 사용자 반납 현황 조회 (modoo_user_state_return)

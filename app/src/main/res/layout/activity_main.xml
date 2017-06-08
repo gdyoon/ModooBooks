@@ -126,7 +126,7 @@
                 android:layout_marginTop="20dp"/>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btn_main_vm_search"
                 android:text="찾아보기"
                 android:textSize="15dp"
                 android:layout_width="120dp"

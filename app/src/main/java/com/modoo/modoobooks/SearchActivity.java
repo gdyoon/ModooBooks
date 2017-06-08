@@ -73,15 +73,16 @@ public class SearchActivity extends AppCompatActivity {
                     @Override
                     public void run() {
 
-                        String[] rows = searchedList.split("$");
-
+                        Log.d("DB", "searchedList:" + searchedList);
+                        String[] rows = searchedList.split("&");
+                        Log.d("DB", "rowsCount : " + rows.length);
                         for(String row : rows){
                             String[] col = row.split("#");
                             String ret_vm_addr = col[0];
                             String ret_vm_lat = col[1];
-                            String ret_vm_lng = col[1];
+                            String ret_vm_lng = col[2];
 
-                            searchedItem(R.drawable.img_book,ret_vm_addr, "");
+                            searchedItem(R.drawable.img_vending_machine,ret_vm_addr, "");
                         }
                     }
                 }, 1000);

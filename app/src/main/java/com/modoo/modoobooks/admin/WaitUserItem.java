@@ -16,8 +16,11 @@ import com.modoo.modoobooks.R;
 
 public class WaitUserItem extends LinearLayout {
 
+    int id;
     TextView tv_wait_user_name;
     TextView tv_wait_user_id;
+    Button btn_wait_user_confirm;
+    Button btn_wait_user_refuse;
 
 
     public WaitUserItem(Context context) {
@@ -30,9 +33,23 @@ public class WaitUserItem extends LinearLayout {
 
         tv_wait_user_name = (TextView)findViewById(R.id.tv_wait_user_name);
         tv_wait_user_id = (TextView)findViewById(R.id.tv_wait_user_id);
+        btn_wait_user_confirm = (Button)findViewById(R.id.btn_wait_user_confirm);
+        btn_wait_user_refuse = (Button)findViewById(R.id.btn_wait_user_refuse);
     }
 
 
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Button getConfirmBtn() { return btn_wait_user_confirm; }
+    public Button getRefuseBtn() { return btn_wait_user_refuse; }
 
     public void setUserNameText(String name)  {
         this.tv_wait_user_name.setText(name);

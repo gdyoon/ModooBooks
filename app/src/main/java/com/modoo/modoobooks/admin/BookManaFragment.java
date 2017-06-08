@@ -57,6 +57,15 @@ public class BookManaFragment extends Fragment {
         searchedItem.setAuthorText(paramAuthorText);
         searchedItem.setButtonText("반납승인");
 
+        searchedItem.getBtn_read_book_return().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchedItem.removeAllViews();
+                Toast.makeText(getContext(), "반납이 승인 되었습니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
         searchedItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,6 +89,16 @@ public class BookManaFragment extends Fragment {
         searchedItem.setTitleText(paramTitleText);
         searchedItem.setAuthorText(paramAuthorText);
         searchedItem.setButtonText("입고");
+
+
+        searchedItem.getBtn_read_book_return().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchedItem.removeAllViews();
+                Toast.makeText(getContext(), "입고 처리 완료", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         searchedItem.setOnClickListener(new View.OnClickListener() {
             @Override

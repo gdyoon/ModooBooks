@@ -26,5 +26,6 @@ public class CONFIG {
     public static final String MODOO_ADMIN_STAT_MONTH_BORROW  = SERVER_IP + "modoo_admin_stat_month_borrow.php";
     public static final String MODOO_ADMIN_STAT_MONTH_RETURN  = SERVER_IP + "modoo_admin_stat_month_return.php";
 
+    public static final String MODOO_SELET_ALL_VM_LIST  = SERVER_IP + "modoo_user_vm_select_all.php";
 
 }

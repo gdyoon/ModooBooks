@@ -35,8 +35,8 @@ public class LoginActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         // 임시
-        et_login_id.setText("jjy123123");
-        et_login_pw.setText("2222");
+        //et_login_id.setText("jjy123123");
+        //et_login_pw.setText("2222");
     }
 
 
